@@ -5,7 +5,7 @@
 # Start FROM Ubuntu image https://hub.docker.com/_/ubuntu with "FROM arm64v8/ubuntu:22.04" (deprecated)
 # Start FROM Debian image for arm64v8 https://hub.docker.com/r/arm64v8/debian (new)
 # FROM arm64v8/debian:bookworm-slim
-FROM opsdockerimage/ubuntu-slim-arm64:0.13
+FROM ubuntu/linux/arm64/v8:latest
 
 # Set environment variables
 ENV PYTHONUNBUFFERED=1 \
