@@ -35,7 +35,7 @@ jobs:
       # 📦 Step 3: 构建 Docker 镜像
       - name: Build Docker Image
         run: |
-          docker buildx build --platform linux/arm64 -t my-yolo:latest --load .
+          docker buildx build --platform linux/arm64 -t my-yolo-arm64:latest --load .
 
       # 检查镜像是否存在
       - name: Check built images
@@ -45,9 +45,9 @@ jobs:
       # 🔄 Step 4: 打 Tag
       - name: Tag Docker Image
         run: |
-          docker tag my-yolo:latest ${{ secrets.DOCKER_USERNAME }}/my-yolo:latest
+          docker tag my-yolo-arm64:latest ${{ secrets.DOCKER_USERNAME }}/my-yolo-arm64:latest
 
       # 🚀 Step 5: 推送到 Docker Hub
       - name: Push Docker Image
         run: |
-          docker push ${{ secrets.DOCKER_USERNAME }}/my-yolo:latest
+          docker push ${{ secrets.DOCKER_USERNAME }}/my-yolo-arm64:latest
